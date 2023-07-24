@@ -4,6 +4,7 @@ using SalesWebMVC.Models.ViewModels;
 using SalesWebMVC.Services;
 using SalesWebMVC.Services.Exceptions;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace SalesWebMVC.Controllers
 {
@@ -115,5 +116,18 @@ namespace SalesWebMVC.Controllers
                 return BadRequest();
             }
         }
+        public IActionResult Error(string message)
+        {
+            var viewModel = new ErrorViewModel
+            {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+
+            };
+            return View(viewModel);
+        }
+
     }
+
 }
+
