@@ -1,5 +1,4 @@
-﻿using SalesWebMVC.Data;
-using SalesWebMVC.Models;
+﻿using SalesWebMVC.Models;
 using SalesWebMVC.Services.Exceptions;
 using System;
 using System.Collections.Generic;
